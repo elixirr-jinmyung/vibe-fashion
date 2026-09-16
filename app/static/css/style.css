@@ -1,0 +1,36 @@
+:root {
+    --hero-bg: #1a1a2e;
+    --text-main: #1f1f1f;
+}
+
+body {
+    color: var(--text-main);
+    font-family: "Segoe UI", "Noto Sans KR", sans-serif;
+}
+
+.hero-section {
+    background-color: var(--hero-bg);
+}
+
+.product-card img {
+    height: 260px;
+    object-fit: cover;
+}
+
+.product-card {
+    border: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0.75rem 1.25rem rgba(0, 0, 0, 0.12);
+}
+
+.price-text {
+    font-weight: 700;
+}
+
+.footer {
+    font-size: 0.95rem;
+}

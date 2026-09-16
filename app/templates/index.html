@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}VIBE-FASHION | 홈{% endblock %}
+
+{% block content %}
+<section class="hero-section text-white py-5">
+    <div class="container py-5">
+        <h1 class="display-5 fw-bold mb-3">나만의 패션, 지금 시작하세요</h1>
+        <p class="lead mb-0">트렌디한 아이템을 합리적인 가격으로 만나보세요.</p>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="h3 mb-0">신상품</h2>
+            <a href="#" class="btn btn-sm btn-outline-dark">전체 보기</a>
+        </div>
+
+        <div class="row g-4">
+            {% for product in products %}
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="card h-100 shadow-sm product-card">
+                    <img src="{{ product.thumbnail_url }}" class="card-img-top" alt="{{ product.name }}">
+                    <div class="card-body d-flex flex-column">
+                        <h3 class="h6 card-title">{{ product.name }}</h3>
+                        <p class="price-text mb-3">{{ product.price }}</p>
+                        <button class="btn btn-dark mt-auto">장바구니 담기</button>
+                    </div>
+                </div>
+            </div>
+            {% else %}
+            <div class="col-12">
+                <div class="alert alert-secondary mb-0" role="alert">
+                    현재 표시할 추천 상품이 없습니다.
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

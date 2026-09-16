@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}마이페이지 | VIBE-FASHION{% endblock %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container" style="max-width: 720px;">
+        <div class="card shadow-sm border-0">
+            <div class="card-body p-4 p-md-5">
+                <h1 class="h4 mb-3">마이페이지</h1>
+                <p class="mb-2">로그인 상태입니다.</p>
+                <p class="text-muted mb-4">이메일: {{ email or '이메일 정보 없음' }}</p>
+                <a class="btn btn-dark" href="{{ url_for('auth.logout') }}">로그아웃</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
